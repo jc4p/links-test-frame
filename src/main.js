@@ -53,7 +53,7 @@ function createArticleCard(article) {
   
   card.addEventListener('click', async () => {
     try {
-      window.open(article.url);
+      window.location.href = article.url;
       // Use frame SDK to open URL if available
       // if (frame.sdk && frame.sdk.actions && frame.sdk.actions.openUrl) {
       //   await frame.sdk.actions.openUrl({ url: article.url });
