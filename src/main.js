@@ -53,13 +53,14 @@ function createArticleCard(article) {
   
   card.addEventListener('click', async () => {
     try {
+      window.open(article.url);
       // Use frame SDK to open URL if available
-      if (frame.sdk && frame.sdk.actions && frame.sdk.actions.openUrl) {
-        await frame.sdk.actions.openUrl({ url: article.url });
-      } else {
-        // Fallback for non-frame environments
-        window.open(article.url, '_blank');
-      }
+      // if (frame.sdk && frame.sdk.actions && frame.sdk.actions.openUrl) {
+      //   await frame.sdk.actions.openUrl({ url: article.url });
+      // } else {
+      //   // Fallback for non-frame environments
+      //   window.open(article.url, '_blank');
+      // }
     } catch (error) {
       console.error('Error opening URL:', error);
       window.open(article.url, '_blank');
